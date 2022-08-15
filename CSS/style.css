@@ -1,0 +1,407 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.container{
+    width: 100%;
+    height: 100vh;
+}
+
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 5%;
+    background: url(../Images/);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+}
+.logo{
+    font-size: 30px;
+    font-weight: 500;
+    background: linear-gradient(to right, #4799fd, #0000ff);
+    padding: 20px 40px;
+    border-radius: 10px;
+    color: #fff;
+}
+nav{
+    display: flex;
+    align-items: center;
+    background: #fdfdfd;
+    border-radius: 50px;
+    padding: 5px;
+    box-shadow: 0 5px 5px -1px rgba(0,0,0,0.2);
+}
+.nav-links li{
+    display: inline-block;
+    padding: 13px 20px;
+    margin: 10px;
+    text-align: center;
+    z-index: 2;
+    transition: color 0.5s;
+    position: relative;
+}
+.nav-links li::after{
+    content: '';
+    background: linear-gradient(to right, #4799fd, yellow);
+    width: 0;
+    height: 3px;
+    position: absolute;
+    bottom: -3px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.5s;
+}
+.nav-links li:hover::after{
+    width: 100%;
+}
+.nav-links li:hover a i{
+    transform: rotate(-90deg);
+}
+.nav-links li a{
+    font-size: 18px;
+    text-decoration: none;
+    color: #777;
+    position: relative;
+}
+
+.sub-menu-1{
+    display: none;
+    transition: all 0.5s;
+}
+.nav-links li:hover .sub-menu-1{
+    display: block;
+    position: absolute;
+    background: rgb(244, 244, 244);
+    border-radius: 5px;
+    padding: 5px 20px;
+    margin-top: 15px;
+    margin-left: -15px;
+}
+.nav-links li:hover .sub-menu-1 ul{
+    display: block;
+    margin: 10px;
+}
+.nav-links li:hover .sub-menu-1 ul li{
+    width: 200px;
+    padding: 5px;
+    text-align: left;
+}
+.nav-links li:hover .sub-menu-1 ul li a{
+    font-size: 15px;
+}
+
+.register-btn{
+    text-decoration: none;
+    font-size: 18px;
+    color: #4799fd;
+    outline: none;
+    border: 1px solid #4799fd;
+    padding: 10px 20px;
+    border-radius: 30px;
+    transition: all 0.3s ease-out;
+}
+.register-btn:hover{
+    background: #4799fd;
+    color: #fff;
+}
+
+/* =========== MAIN CONTENT SECTION CSS ============ */
+.content{
+    margin-top: 150px;
+    padding: 50px 7%;
+}
+.row{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.row .left-col{
+    flex-basis: 35%;
+    text-align: center;
+}
+.left-col h1{
+    font-size: 60px;
+    margin-bottom: 20px;
+}
+.left-col h3{
+    font-size: 20px;
+    color: #555;
+    margin-bottom: 20px;
+}
+.left-col .btn{
+    text-decoration: none;
+    padding: 10px 30px;
+    border-radius: 10px;
+    color: #fff;
+    background: linear-gradient(to right, #4799fd, blue);
+}
+
+.right-col{
+    flex-basis: 45%;
+    text-align: center;
+}
+.right-col img{
+    width: 100%;
+    overflow: hidden;
+    transition: transform 0.5s;
+}
+.right-col img:hover{
+    transform: scale(1.1);
+}
+
+
+/* ========= ACRIVITIES SECTION CSS ========= */
+.activities{
+    margin-top: 150px;
+    margin-bottom: 150px;
+}
+.sub-title{
+    margin: 50px 70px 20px;
+    font-size: 2.2vw;
+    font-weight: 500;
+    color: #333;
+    text-align: center;
+    position: relative;
+}
+.sub-title::after{
+    content: '';
+    background: #777;
+    width: 40%;
+    height: 2px;
+    position: absolute;
+    right: -100px;
+}
+.sub-title::before{
+    content: '';
+    background: #777;
+    width: 40%;
+    height: 2px;
+    position: absolute;
+    bottom: 50%;
+    left: -100px;
+}
+.row .col-1 img{
+    width: 100%;
+}
+.activities .row .col-2{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+.illustration img{
+    width: 100%;
+    max-width: 500px;
+}
+.row .col-2 h3{
+    font-size: 40px;
+    text-align: center;
+    margin-bottom: 30px;
+    position: relative;
+}
+.row .col-2 h3::after{
+    content: '';
+    background: linear-gradient(to right, #4799fd, blue);
+    width: 40%;
+    height: 4px;
+    position: absolute;
+    bottom: -5px;
+    left: 30%;
+    border-radius: 5px;
+}
+
+.row .col-2 p{
+    font-size: 20px;
+    color: #555;
+    text-align: center;
+}
+
+
+/* ============= SERVICES SECTION CSS ============== */
+.services .sub-title::after{
+    content: '';
+    background: #777;
+    width: 45%;
+    height: 2px;
+    position: absolute;
+    bottom: 50%;
+    right: -100px;
+}
+.services .sub-title::before{
+    content: '';
+    background: #777;
+    width: 45%;
+    height: 2px;
+    position: absolute;
+    bottom: 50%;
+    left: -100px;
+}
+.prestations{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 100px;
+}
+.prestations .col-3{
+    flex-basis: 45%;
+    flex: 1;
+}
+.prestations .col-3 img{
+    width: 100%;
+}
+.service-type h3{
+    font-size: 50px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    padding: 20px 30px;
+    margin-bottom: 30px;
+    color: #fff;
+    border-radius: 10px;
+    background: #083f9b;
+    z-index: 2;
+}
+.service-type h3 i{
+    font-size: 30px;
+    margin-left: 20%;
+    text-align: center;
+    transition: transform 0.5s;
+}
+.service-type h3:hover i{
+    transform: rotate(90deg);
+}
+.service-type .menu.open {
+    list-style: none;
+}
+.service-type .menu li{
+    margin-bottom: 30px;
+    padding: 30px 40px;
+    font-size: 20px;
+    color: #fff;
+    border-radius: 10px;
+    background: #4799fd;
+}
+.service-type .menu li:nth-child(1){
+    background: #094bb8;
+}
+.service-type .menu li:nth-child(2){
+    background: #ce673c;
+}
+.service-type .menu li:nth-child(3){
+    background: #eead11;
+}
+
+/* ============= DOCUMENTATION SECTION CSS ========== */
+.documentation{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 100px;
+}
+.documentation .col-3 p{
+    font-size: 22px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+.documentation .col-3 img{
+    width: 100%;
+    max-width: 600px;
+}
+
+
+/* =========== REGISTRATION PAGE CSS ============ */
+.register-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* =========== FOOTER SECTION CSS ============ */
+.footer{
+    padding: 30px 7%;
+    background: #efefef;
+}
+.footer-col-1 .logo{
+    margin-bottom: 20px;
+}
+.footer-col-1 .logo h3{
+    color: #fff;
+}
+.footer-col-1 h3, p{
+    color: #555;
+    margin-bottom: 20px;
+}
+.footer-col-1 p{
+    font-size: 15px;
+}
+.footer-col-2 h3{
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.footer-col-2 ul li{
+    list-style: none;
+    margin-bottom: 15px;
+    color: #555;
+    text-align: center;
+}
+
+.footer-col-3 h3{
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.footer-col-3 input{
+    width: 100%;
+    padding: 10px 40px;
+    border: none;
+    margin-bottom: 10px;
+}
+.footer-col-3 input::placeholder{
+    color: #777;
+    text-align: left;
+}
+.footer-col-3 input:focus{
+    border: 1px solid #4799fd;
+}
+.footer-col-3 button{
+    font-size: 15px;
+    padding: 5px 40px;
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    background: linear-gradient(to right, #4799fd, blue);
+}
+
+.footer-col-4 h3{
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.footer-col-4 .social-links ul{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.footer-col-4 .social-links ul li{
+    text-align: center;
+    margin-left: 20px;
+}
+.footer-col-4 .social-links ul li img{
+    width: 20px;
+    cursor: pointer;
+}
+
+
+/* ============= CONTACT PAGE CSS =============== */
