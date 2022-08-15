@@ -1,0 +1,304 @@
+@import url(../Fonts/Poppins-Medium.ttf);
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins-Medium',sans-serif;
+}
+body{
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #000, transparent),url(../Images/background1.jpg);
+    background-position: center;
+    background-size: cover;
+}
+.container:not(.contact-box, .login-box){
+    max-width: 700px;
+    width: 100%;
+    background: #fff;
+    padding: 25px 30px;
+    border-radius: 5px;
+    position: relative;
+}
+.container .title{
+    font-size: 25px;
+    font-weight: 500;
+    position: relative;
+}
+.container .title::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    width: 30px;
+    background-color: linear-gradient(135deg, #4799fd, #030388);
+}
+.container form .user-details,
+.container form .location-details{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 20px 0 12px 0;
+}
+form .user-details .input-box,
+form .location-details .input-box{
+    margin-bottom: 15px;
+    width: calc(100% / 2 - 20px);
+}
+.user-details .input-box .details,
+.location-details .input-box .details{
+    display: block;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+.user-details .input-box input,
+.location-details .input-box input{
+    height: 45px;
+    width: 100%;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding-left: 15px;
+    border-bottom-width: 2px;
+    transition: all 0.3s ease;
+}
+.user-details .input-box input:focus,
+.user-details .input-box input:valid,
+.location-details .input-box input:focus,
+.location-details .input-box input:valid{
+    border-color: #4799fd;
+}
+
+form .button{
+    height: 45px;
+    margin: 45px;
+}
+form .button input:not(.contact-btn){
+    height: 100%;
+    width: 100%;
+    outline: none;
+    color: #fff;
+    border: none;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    border-radius: 5px;
+    background: linear-gradient(135deg, #4799fd, #030388);
+}
+form .button input:not(.contact-btn):hover{
+    background: linear-gradient(-135deg, #4799fd, #030388);
+}
+form p{
+    text-align: center;
+    font-size: 15px;
+}
+form p span{
+    color: #4799fd;
+    cursor: pointer;
+}
+form p span:hover{
+    text-decoration: underline;
+}
+
+
+/* =========== CONTACT PAGE CSS ========== */
+.container.contact-box{
+    width: 80%;
+    background: #fff;
+    border-radius: 6px;
+    padding: 30px 60px 40px 40px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+}
+.contact-box .content form{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.content form .left-side{
+    width: 30%;
+    margin-top: 15px;
+    text-align: left;
+}
+.left-side .topic-text{
+    font-size: 28px;
+    font-weight: 500;
+    color: #030388;
+    margin-bottom: 10px;
+}
+.left-side p{
+    margin-bottom: 15px;
+}
+.left-side .input-box{
+    margin-bottom: 15px;
+}
+.left-side .input-box label{
+    margin-right: 10px;
+}
+.left-side .input-box input{
+    padding: 5px 20px;
+}
+
+.content .right-side .topic-text{
+    font-size: 23px;
+    font-weight: 600;
+    color: #030388;
+}
+
+.right-side .input-box{
+    height: 50px;
+    width: 100%;
+    text-align: left;
+    margin-bottom: 30px;
+}
+.right-side .input-box label{
+    margin-bottom: 15px;
+}
+.right-side .input-box input:not(.date, .time),
+.right-side .input-box textarea{
+    height: 90%;
+    width: 90%;
+    border: none;
+    font-size: 16px;
+    background: #f0f1f8;
+    border-radius: 6px;
+    padding: 0 15px;
+    resize: none;
+    outline: none;
+}
+.right-side .message-box{
+    min-height: 110px;
+
+}
+.right-side .button{
+    display: inline-block;
+    margin-top: 10px;
+}
+.right-side .button input[type="button"]{
+    color: #fff;
+    font-size: 18px;
+    outline: none;
+    border: none;
+    border-radius: 6px;
+    padding: 8px 16px;
+    background: #030388;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.button input[type="button"]:hover{
+    background: #0505e6;
+}
+
+
+/* ========== LOGIN SECTION CSS ============ */
+.login-box{
+    background: rgba(255,255,255,0.2);
+    -webkit-backdrop-filter: blur(7px);
+    backdrop-filter: blur(7px);
+    max-width: 400px;
+    max-height: 500px;
+    width: 100%;
+    height: auto;
+    padding: 20px 30px;
+    border: 3px solid #ccc;
+    border-radius: 10px;
+}
+.login-box form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+.login-box form div{
+    text-align: center;
+}
+.login-box form .title-box{
+    font-size: 28px;
+    font-weight: 400;
+    color: #ddd;
+    margin-bottom: 30px;
+}
+.login-box form .connexion-info{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+.connexion-info .input-box{
+    margin-bottom: 10px;
+    width: 100%;
+}
+/*.connexion-info .input-box i{
+    position: absolute;
+}*/
+.connexion-info .input-box input{
+    width: 100%;
+    height: 30px;
+    margin-top: 10px;
+    padding: 5px 10px;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #ddd;
+    color: #ccc;
+    outline: none;
+    transition: all 0.5s ease;
+}
+.connexion-info .input-box input::placeholder{
+    color: #ccc;
+}
+.connexion-info .input-box input:focus::placeholder{
+    color: #333;
+}
+.connexion-info .input-box input:focus{
+    transform: scale(1.1);
+    background: #fff;
+    color: #000;
+    padding: 10px 30px;
+    border-radius: 30px;
+}
+.connexion-info .button{
+    margin-top: 20px;
+}
+.connexion-info .button button{
+    width: 100%;
+    padding: 10px 30px;
+    font-size: 15px;
+    background: transparent;
+    color: #ccc;
+    border: none;
+    border-bottom: 2px solid #ccc;
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+.connexion-info .button button:hover{
+    background: #4799fd;
+    color: #fff;
+    border-radius: 30px;
+    border-bottom-color: #4799fd;
+    transform: scale(1.1);
+}
+.connexion-info .button p{
+    font-size: 15px;
+    font-weight: 500;
+    margin-top: 20px;
+    color: #ccc;
+}
+.connexion-info .button p a{
+    color: antiquewhite;
+    margin-left: 10px;
+}
+
+.error{
+    background: #f2dede;
+    color: #a94442;
+    padding: 10px;
+    width: 95%;
+    border-radius: 5px;
+    margin: 20px auto;
+}
