@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Windows 237</title>
+    <link rel="stylesheet" href="assets/CSS/register.css">
+    <script src="https://kit.fontawesome.com/b63f40c510.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <div class="container">
+        <div class="title">Enregistrement des Prestations ponctuelles</div>
+        <div class="form">
+            <form action="assets/php/prestation/prestation_registration.php" method="POST" id="regform">
+                <div class="user-details">
+                    <div class="input-box">
+                        <span class="details">Image</span>
+                        <input type="file" name="image">
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Nom Prestation</span>
+                        <input type="text" name="info" placeholder="Entrer le nom du service" required>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Details</span>
+                        <input type="text" name="description" placeholder="Description">
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Prix</span>
+                        <input type="number" name="price" placeholder="Prix">
+                    </div>
+                </div>
+
+                <div class="button">
+                    <input type="submit" name="submit" value="Register">
+                </div>
+            </form>
+        </div>
+            
+        </div>
+    </div>
+
+</body>
+</html>
