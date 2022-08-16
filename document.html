@@ -1,0 +1,253 @@
+<?php 
+    require_once("assets/php/config.php");
+    if(isset($_SESSION['user_id']) && isset($_SESSION['name'])) {
+
+?>
+
+<?php require_once('assets/php/front/header.php'); ?>
+
+        <div class="content">
+            <h1 class="title"><?php echo $_SESSION['name']?></h1>
+            <h1 class="title">Obtenez en un clic ce dont vous avez besoin.</h1>
+            <div class="list-container">
+                <div class="left-col">
+                    <?php                   
+                        $sql = "SELECT * FROM document";
+                        $request = mysqli_query($connection, $sql);
+                    
+                        while($rows = mysqli_fetch_assoc($request)){
+                            $id = $rows['document_id'];
+                        
+                            echo '<div class="card">';
+                            echo '<div class="card-img">';
+                            echo '<img src="assets/Images/images docs/'.$rows['image'].'">';
+                            echo '</div>';
+                            echo '<div class="card-info">';
+                            echo '<h4>'.$rows['name'].'</h4>';
+                            echo '<a href="assets/files/'.$rows['name'].'" download>Télécharger</a>';
+                            echo '</div>';
+                            echo '</div>';
+                        }
+                    ?>
+                    <!--
+                        <div class="card">
+                            <div class="card-img">
+                                <img src="assets/Images/images docs/Acte_nais1.png">
+                            </div>
+                            <div class="card-info">
+                                <h4>Acte de Naissance</h4>
+                                <a href="assets/files/Copie acte de naissance 02.pdf" download>Télécharger</a>
+                            </div>
+                        </div>
+                        -->
+                    </div>
+                <div class="right-col">
+                    <div class="sidebar" id="link">
+                        <h2>Liens Utiles</h2>
+                        <h4>Vers des sites très recommandés</h4>
+                        <div class="list-links">
+                            <div class="link">
+                                <i class="fa-solid fa-link"></i>
+                                <a href="https://www.hiltonhotels.com/fr_FR/cameroun/hilton-yaounde/?WT.mc_id=LADA0EMEA1HI2PSH3GGL4INTBPP5dkt6CTYHOCN7en_&epid!_&ebuy!_%7Bdskeywordid%7D&gclid=Cj0KCQjw_7KXBhCoARIsAPdPTfhA3isWgdmgSSJFi4rk5OJMHCajs2Os518C1D9l2ttwfpWE317sq_AaAlLgEALw_wcB&gclsrc=aw.ds">Hilton Yaoundé</a>
+                            </div>
+                            <div class="link">
+                                <i class="fa-solid fa-link"></i>
+                                <a href="https://www.reservationstays.com/requests/F684amBATObq2DXprR-NwA/hotels/elX5wM4j?expand_params=true&gallery=open">Kemla Douala</a>
+                            </div>
+                            <div class="link">
+                                <i class="fa-solid fa-link"></i>
+                                <a href="#">Agence de voyage</a>
+                            </div>
+                            <div class="link">
+                                <i class="fa-solid fa-link"></i>
+                                <a href="http://www.pharmacie-esperance.fr/content/99-cameroun">pharmacie de garde</a>
+                            </div>
+                            <div class="link">
+                                <i class="fa-solid fa-link"></i>
+                                <a href="https://portal.passcam.cm/">pré-enregistrement de passport</a>
+                            </div>
+                            <div class="link">
+                                <i class="fa-solid fa-link"></i>
+                                <a href="https://www.preinscriptions.uninet.cm/">Université de Yaoundé I</a>
+                            </div>
+                            <div class="link">
+                                <i class="fa-solid fa-link"></i>
+                                <a href="https://inscriptions.univ-yaounde2.org/registrations/welcome/pregistration">Université de Yaoundé II</a>
+                            </div>
+                            <div class="link">
+                                <i class="fa-solid fa-link"></i>
+                                <a href="#">Site d'objects trouvés</a>
+                            </div>
+                            <div class="link">
+                                <i class="fa-solid fa-link"></i>
+                                <a href="https://beegroup.cm">Site de livraison</a>
+                            </div>
+                            <select>
+                                <option>Ambassades</option>
+                                <option>
+                                    <div class="link">
+                                        <i class="fa-solid fa-link"></i>
+                                        <a href="http://www.cameroon.diplomatie.belgium.be/">Belgique</a>
+                                    </div>
+                                </option>
+                                <option>
+                                    <div class="link">
+                                        <i class="fa-solid fa-link"></i>
+                                        <a href="http://www.ukincameroon.fco.gov.uk/">Royaume Uni</a>
+                                    </div>
+                                </option>
+                                <option>
+                                    <div class="link">
+                                        <i class="fa-solid fa-link"></i>
+                                        <a href="http://www.ambyaounde.esteri.it/">Italie</a>
+                                    </div>
+                                </option>
+                                <option>
+                                    <div class="link">
+                                        <i class="fa-solid fa-link"></i>
+                                        <a href="http://www.cm.ambafrance.org/">France</a>
+                                    </div>
+                                </option>
+                                <option>
+                                    <div class="link">
+                                        <i class="fa-solid fa-link"></i>
+                                        <a href="http://www.iaunde.itamaraty.gov.br/">Brésil</a>
+                                    </div>
+                                </option>
+                                <option>
+                                    <div class="link">
+                                        <i class="fa-solid fa-link"></i>
+                                        <a href="http://www.anadainternational.gc.ca/cameroon-cameroun/">Canada</a>
+                                    </div>
+                                </option>
+                                <option>
+                                    <div class="link">
+                                        <i class="fa-solid fa-link"></i>
+                                        <a href="www.cm.usembassy.gov">États Unis</a>
+                                    </div>
+                                </option>
+                            </select>
+                            <h3>Banques</h3>
+                            <div class="link">
+                                <i class="fa-solid fa-link"></i>
+                                <a href="https://societegenerale.cm/">Société Générale Cameroun</a>
+                            </div>
+                            <div class="link">
+                                <i class="fa-solid fa-link"></i>
+                                <a href="https://www.afrilandfirstbank.com/">Afriland First Bank</a>
+                            </div>
+                            <div class="link">
+                                <i class="fa-solid fa-link"></i>
+                                <a href="https://banqueatlantique-cmr.com/">Banque Atlantique</a>
+                            </div>
+                            <div class="link">
+                                <i class="fa-solid fa-link"></i>
+                                <a href="https://www.ubacameroon.com/">UBA Bank</a>
+                            </div>
+                            <h3>Assurances</h3>
+                            <div class="link">
+                                <i class="fa-solid fa-link"></i>
+                                <a href="https://www.axa.fr/">Axa Assurance</a>
+                            </div>
+                            <div class="link">
+                                <i class="fa-solid fa-link"></i>
+                                <a href="https://www.allianz.com/">Allianz Assurance</a>
+                            </div>
+                            <div class="link">
+                                <i class="fa-solid fa-link"></i>
+                                <a href="https://www.atlantiqueassurances.cm/">Atlantique Assurance</a>
+                            </div>
+                            <div class="link">
+                                <i class="fa-solid fa-link"></i>
+                                <a href="https://www.groupensia.com/">NSIA Assurance</a>
+                            </div>
+                            <h3>Hopitaux</h3>
+                            <div class="link">
+                                <i class="fa-solid fa-link"></i>
+                                <a href="http://hopitalcentral.org/">Hôpital Central de Yaoundé</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sidebar">
+                        <h2>Informations
+                            & Renseignements Pratiques
+                        </h2>
+                        <h4>Procédures Pratiques</h4>
+                        <div class="practical-info" id="procedures">
+                            <div class="link">
+                                <i class="fa-solid fa-link"></i>
+                                <a href="#">Procédure et pièces nécessaires pour établissements d’une CNI</a>
+                            </div>
+                            <div class="link">
+                                <i class="fa-solid fa-link"></i>
+                                <a href="#">Procédure et pièces nécessaires pour établissements de passeport</a>
+                            </div>
+                            <div class="link">
+                                <i class="fa-solid fa-link"></i>
+                                <a href="#">Procédure et pièces nécessaires pour importation au Cameroun</a>
+                            </div>
+                            <div class="link">
+                                <i class="fa-solid fa-link"></i>
+                                <a href="#">Procédure et pièces nécessaires pour exportation du Cameroun</a>
+                            </div>
+                            <div class="link">
+                                <i class="fa-solid fa-link"></i>
+                                <a href="#">Procédure et pièces nécessaires pour dedouanement au Cameroun</a>
+                            </div>
+                            <div class="link">
+                                <i class="fa-solid fa-link"></i>
+                                <a href="#">Procédure et pièces nécessaires pour établissements de carte grise auto</a>
+                            </div>
+                        </div>
+                        <h4>Renseignements pour déplacement inter urbain</h4>
+                        <div class="practical-info" id="info">
+                            <div class="link">
+                                <i class="fa-solid fa-link"></i>
+                                <a href="#">Horaires arrivées et départs des vols aéroports Yaounde et D’la</a>
+                            </div>
+                            <div class="link">
+                                <i class="fa-solid fa-link"></i>
+                                <a href="#">Horaires arrivées et départs des trains gares Yde, Dla, Ndre, Belabo.</a>
+                            </div>
+                            <div class="link">
+                                <i class="fa-solid fa-link"></i>
+                                <a href="#">Horaires et réservations des agences de voyages de transport inter urbain Yde</a>
+                            </div>
+                            <div class="link">
+                                <i class="fa-solid fa-link"></i>
+                                <a href="#">Dla, Bafoussam, Bamenda, Bertoua, Ngaoundere, Garoua. Des agences</a>
+                            </div>
+                            <div class="link">
+                                <i class="fa-solid fa-link"></i>
+                                <a href="#">Horaires des vols arrivés et départ des aéroports Yaoundé et Douala</a>
+                            </div>
+                            <div class="link">
+                                <i class="fa-solid fa-link"></i>
+                                <a href="#">Horaires départ et arrivée des trains voyageurs des gares Yaoundé et Douala</a>
+                            </div>
+                            <div class="link">
+                                <i class="fa-solid fa-link"></i>
+                                <a href="#">Vaccinations obligatoires au Cameroun</a>
+                            </div>
+                            <div class="link">
+                                <i class="fa-solid fa-link"></i>
+                                <a href="#">Météo des villes Yaoundé et Douala</a>
+                            </div>
+                            <div class="link">
+                                <i class="fa-solid fa-link"></i>
+                                <a href="#">MAIRIE ARRONDISSEMENTS DE YAOUNDÉ ET DOUALA LIEU ET COORDONNÉES</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+<?php require_once('assets/php/front/footer.php') ?>
+
+<?php 
+    } else {
+        header("Location: login.php");
+        exit();
+    }
+?>
